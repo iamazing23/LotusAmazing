@@ -7,7 +7,7 @@ using VentLib.Utilities.Optionals;
 
 namespace Lotus.Roles.Subroles;
 
-public class Bait: Subrole
+public class Bait : Subrole
 {
     private bool triggered;
 

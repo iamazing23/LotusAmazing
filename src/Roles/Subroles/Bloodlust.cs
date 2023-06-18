@@ -24,7 +24,7 @@ using VentLib.Utilities.Extensions;
 
 namespace Lotus.Roles.Subroles;
 
-public class Bloodlust: Subrole
+public class Bloodlust : Subrole
 {
     public static Type[] IncompatibleRoles =
     {

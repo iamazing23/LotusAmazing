@@ -15,7 +15,7 @@ using VentLib.Utilities.Optionals;
 
 namespace Lotus.Roles.Subroles;
 
-public class Bewilder: Subrole
+public class Bewilder : Subrole
 {
     private float visionMultiplier;
     public override string Identifier() => "<size=2.3>⁂</size>";

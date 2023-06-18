@@ -11,7 +11,7 @@ using VentLib.Utilities;
 
 namespace Lotus.Roles.Subroles;
 
-public abstract class Subrole: CustomRole, ISubrole
+public abstract class Subrole : CustomRole, ISubrole
 {
     public readonly HashSet<IFaction> FactionRestrictions = new();
     public readonly HashSet<Type> RoleRestrictions = new();

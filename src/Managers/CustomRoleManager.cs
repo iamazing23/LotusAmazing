@@ -100,15 +100,17 @@ public static class CustomRoleManager
 
         CustomRole role = GetRoleFromType(roleType);
         ConstructorInfo editorCtor = editorType.GetConstructor(BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic, new Type[] { roleType })!;
-        AbstractBaseRole.RoleEditor editor = (AbstractBaseRole.RoleEditor)editorCtor.Invoke(new object?[] {role});
+        AbstractBaseRole.RoleEditor editor = (AbstractBaseRole.RoleEditor)editorCtor.Invoke(new object?[] { role });
         CustomRole modified = (CustomRole)editor.StartLink();
 
-        if (isStatic) {
+        if (isStatic)
+        {
             typeof(StaticRoles).GetField(roleType.Name)?.SetValue(Static, modified);
             MainRoles.Replace(role, modified);
         }
 
-        if (isExtra) {
+        if (isExtra)
+        {
             typeof(ExtraRoles).GetField(roleType.Name)?.SetValue(Special, modified);
             SpecialRoles.Replace(role, modified);
         }
@@ -127,12 +129,14 @@ public static class CustomRoleManager
         CustomRole role = GetRoleFromType(roleType);
         AbstractBaseRole.RoleEditor editor = role.Editor;
 
-        if (isStatic) {
+        if (isStatic)
+        {
             typeof(StaticRoles).GetField(roleType.Name)?.SetValue(Static, editor.FrozenRole);
             MainRoles.Replace(role, (CustomRole)editor.FrozenRole);
         }
 
-        if (isExtra) {
+        if (isExtra)
+        {
             typeof(ExtraRoles).GetField(roleType.Name)?.SetValue(Special, editor.FrozenRole);
             SpecialRoles.Replace(role, (CustomRole)editor.FrozenRole);
         }
@@ -283,6 +287,7 @@ public static class CustomRoleManager
         public Honed Honed = new Honed();
         public Nimble Nimble = new Nimble();
         public Oblivious Oblivious = new Oblivious();
+        public Practitioner Practitioner = new Practitioner();
         public Romantic Romantic = new Romantic();
         public Sleuth Sleuth = new Sleuth();
         public TieBreaker TieBreaker = new TieBreaker();

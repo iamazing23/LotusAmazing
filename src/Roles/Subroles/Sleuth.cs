@@ -12,7 +12,7 @@ using VentLib.Utilities.Extensions;
 namespace Lotus.Roles.Subroles;
 
 [Localized("Roles.Subroles.Sleuth")]
-public class Sleuth: Subrole
+public class Sleuth : Subrole
 {
     [Localized("SleuthMessage")]
     private static string _sleuthMessage = "You've determined that {0} was a {1}! Great work, Detective!";
