@@ -7,6 +7,7 @@ using Lotus.Roles.Internals.Attributes;
 using Lotus.Roles.Subroles;
 using UnityEngine;
 using VentLib.Localization.Attributes;
+using VentLib.Options.Game;
 using VentLib.Utilities;
 
 
@@ -27,11 +28,7 @@ public class Practitioner : Subrole
         dead.NameModel().GetComponentHolder<TextHolder>().Add(textComponent);
     }
 
-
-    [Localized(nameof(PractitionerDescription))]
-    public static string PractitionerDescription = "The Practitioner lets you see how people died.";
-    protected override RoleModifier Modify(RoleModifier roleModifier)
-    {
-        return base.Modify(roleModifier).RoleColor(new Color(0.32f, 0.74f, 1f));
-    }
+    protected override RoleModifier Modify(RoleModifier roleModifier) => base.Modify(roleModifier).RoleColor(new Color(0f, 0.35f, 0.50f));
+    protected override GameOptionBuilder RegisterOptions(GameOptionBuilder optionStream) =>
+           AddRestrictToCrew(base.RegisterOptions(optionStream));
 }
