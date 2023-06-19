@@ -18,8 +18,6 @@ using Lotus.Factions.Interfaces;
 using Lotus.Extensions;
 using Lotus.Roles.Extra;
 using Lotus.Roles.Interfaces;
-using VentLib.Options.Game;
-using VentLib.Utilities;
 
 namespace Lotus.Roles.RoleGroups.Crew;
 
@@ -42,10 +40,5 @@ public class Practitioner : Crewmate
     protected override RoleModifier Modify(RoleModifier roleModifier) =>
         base.Modify(roleModifier).RoleColor(new Color(0.32f, 0.74f, 1f));
     public static class Options { }
-    protected override GameOptionBuilder RegisterOptions(GameOptionBuilder optionStream) => AddRestrictToCrew(base.RegisterOptions(optionStream));
 
-    private GameOptionBuilder AddRestrictToCrew(GameOptionBuilder gameOptionBuilder)
-    {
-        throw new NotImplementedException();
-    }
 }
